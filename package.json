@@ -1,0 +1,23 @@
+{
+  "name": "qualicorp-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ForgeHefesto/project-test-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ForgeHefesto/project-test-back/issues"
+  },
+  "homepage": "https://github.com/ForgeHefesto/project-test-back#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
