@@ -1,26 +1,67 @@
-export default class BaseService {
+import mongoose from "mongoose";
 
+export default class BaseService {
+  /**
+   * @constructor
+   * @param {Repository} repository
+   */
   constructor(repository) {
     this.repository = repository;
   }
 
+  /**
+   * Get document
+   *
+   * @memberof BaseRepository
+   * @param {string} id
+   * @returns {object}
+   */
   async get(id) {
-    return this.repository.get(id);
+    return this.repository.get({_id: mongoose.Types.ObjectId(id)});
   }
 
-  async getMany(ids) {
-    return this.repository.getMany(ids);
+  /**
+   * Get an array of documents
+   *
+   * @memberof BaseRepository
+   * @param {[string]} ids
+   * @returns {[object]}
+   */
+  async getMany() {
+    return this.repository.getMany();
   }
 
-  async create(user) {
-    return this.repository.create(user);
+  /**
+   * Create document
+   *
+   * @memberof BaseRepository
+   * @param {object} model
+   * @returns {object}
+   */
+  async create(model) {
+    return this.repository.create(model);
   }
 
-  async update(userId, user) {
-    return this.repository.update(userId, user);
+  /**
+   * Update document
+   *
+   * @memberof BaseRepository
+   * @param {string} id
+   * @param {object} model
+   * @returns {object}
+   */
+  async update(id, model) {
+    return this.repository.update(id, model);
   }
 
-  async delete(userId) {
-    return this.repository.delete(userId);
+  /**
+   * Delete document
+   *
+   * @memberof BaseRepository
+   * @param {string} id
+   * @returns {object}
+   */
+  async delete(id) {
+    return this.repository.delete(id);
   }
 }
