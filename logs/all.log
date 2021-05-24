@@ -50,3 +50,5 @@
 [35m[39m
 2021-05-24 03:13:34:1334 [35mhttp[39m: [35mGET / 404 139 - 98.294 ms[39m
 [35m[39m
+2021-05-24 07:03:25:325 [32minfo[39m: [32mServer listening on port: 3000[39m
+2021-05-24 07:03:27:327 [32minfo[39m: [32mDatabase is connected[39m
