@@ -18,6 +18,8 @@ class App {
     this.middlewares();
     
     database.connect();
+    
+    this.app.use(cors())
   }
 
   /**
@@ -28,7 +30,6 @@ class App {
    * @returns {void}
    */
   middlewares() {
-    this.app.use(cors())
     this.app.use(morganMiddleware);
     this.app.use(express.json({ limit: "50mb" }));
     this.app.use(

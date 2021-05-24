@@ -50,8 +50,13 @@ export default class BaseRepository {
    * @param {object} model 
    * @returns {object}
    */
-  async update(id, model) {
-    return this.model.findOneAndUpdate(id, model);
+  
+   async update(id, model) {
+    return this.model.findOneAndUpdate(
+      { _id: id },
+      { $set: model },
+      { new: true, returnOriginal: false }
+    );
   }
 
   /**
