@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import router from "./routes/index.js";
 import { morganMiddleware } from "./utils/index.js";
 import database from "./database/connect.js";
+import cors from "cors"
 
 class App {
   /**
@@ -27,6 +28,7 @@ class App {
    * @returns {void}
    */
   middlewares() {
+    this.app.use(cors())
     this.app.use(morganMiddleware);
     this.app.use(express.json({ limit: "50mb" }));
     this.app.use(
